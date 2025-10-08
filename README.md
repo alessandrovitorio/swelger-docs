@@ -241,6 +241,3 @@ Todas as rotas usam o JSON Server como backend e os dados de exemplo são basead
 
 ---
 
-Se você quiser, posso gerar **uma versão final completa do Swagger JSON** já pronta para **colocar direto no Swagger UI** com todos os 15 filmes, todas as rotas e exemplos.
-
-Quer que eu faça isso?
