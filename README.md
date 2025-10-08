@@ -1,6 +1,3 @@
-Perfeito! Vou montar **um Markdown completo** explicando o Swagger da sua API de filmes, já pronto para exibição, didático e passo a passo, incluindo **schemas, rotas, exemplos e explicações**.
-
----
 
 # 📘 Documentação Swagger - API Filmes JSON Server
 
