@@ -1,0 +1,80 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Filmes JSON Server",
+    "version": "1.0.0",
+    "description": "API simulando um CRUD completo de filmes usando JSON Server. Permite listar, criar, atualizar, deletar e buscar filmes."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Servidor local JSON Server"
+    }
+  ],
+  "paths": {
+    "/filmes": {
+  "get": {
+    "summary": "Lista todos os filmes",
+    "responses": {
+      "200": {
+        "description": "Lista de filmes retornada",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": { "$ref": "#/components/schemas/Filme" }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"/filmes/{id}": {
+  "get": {
+    "summary": "Busca um filme pelo ID",
+    "parameters": [
+      { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+    ],
+    "responses": {
+      "200": {
+        "description": "Filme encontrado",
+        "content": {
+          "application/json": {
+            "schema": { "$ref": "#/components/schemas/Filme" }
+          }
+        }
+      },
+      "404": { "description": "Filme não encontrado" }
+    }
+  }
+}
+
+  },
+  "components": {
+  "schemas": {
+    "Filme": {
+      "type": "object",
+      "required": ["id", "titulo", "ano", "duracao", "generoId"],
+      "properties": {
+        "id": { "type": "integer", "example": 1 },
+        "titulo": { "type": "string", "example": "O Poderoso Chefão" },
+        "ano": { "type": "integer", "example": 1972 },
+        "duracao": { "type": "integer", "example": 175 },
+        "generoId": { "type": "integer", "example": 2 }
+      }
+    },
+    "FilmeInput": {
+      "type": "object",
+      "required": ["titulo", "ano", "duracao", "generoId"],
+      "properties": {
+        "titulo": { "type": "string", "example": "Novo Filme" },
+        "ano": { "type": "integer", "example": 2025 },
+        "duracao": { "type": "integer", "example": 120 },
+        "generoId": { "type": "integer", "example": 1 }
+      }
+    }
+  }
+}
+
+}
